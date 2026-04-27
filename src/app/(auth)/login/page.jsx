@@ -52,7 +52,7 @@ const LoginPage = () => {
               {...register("password", { required: true })}
             />
             <span
-              className="absolute right-3 top-9 cursor-pointer text-gray-500"
+              className="absolute right-3 top-5 cursor-pointer text-gray-500"
               onClick={() => setIsShowPassword(!isShowPassword)}
             >
               {isShowPassword ? <FaEye></FaEye> : <FaEyeSlash />}
