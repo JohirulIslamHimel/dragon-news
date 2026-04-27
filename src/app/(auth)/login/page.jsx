@@ -22,8 +22,9 @@ const LoginPage = () => {
     });
     if (error) {
       alert(error.message);
-    } else {
-      alert("Login successful!");
+    }
+    if (res) {
+      alert("Signin successful");
     }
   };
 
@@ -38,7 +39,7 @@ const LoginPage = () => {
             <legend className="fieldset-legend">Email address</legend>
             <input
               type="email"
-              className="input"
+              className="input w-full pr-10"
               {...register("email", { required: true })}
             />
             {errors.email && <p className="text-red-500">{errors.message}</p>}
@@ -47,11 +48,11 @@ const LoginPage = () => {
             <legend className="fieldset-legend">Password</legend>
             <input
               type={isShowPassword ? "text" : "password"}
-              className="input"
+              className="input w-full pr-10"
               {...register("password", { required: true })}
             />
             <span
-              className="absolute right-2 top-5 cursor-pointer"
+              className="absolute right-3 top-9 cursor-pointer text-gray-500"
               onClick={() => setIsShowPassword(!isShowPassword)}
             >
               {isShowPassword ? <FaEye></FaEye> : <FaEyeSlash />}

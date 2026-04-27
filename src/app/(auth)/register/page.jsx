@@ -48,7 +48,7 @@ const RegisterPage = () => {
             <legend className="fieldset-legend">Your Name</legend>
             <input
               type="text"
-              className="input"
+              className="input w-full pr-10"
               placeholder="Enter your name"
               {...register("name", {
                 required: "Name field is required",
@@ -62,7 +62,7 @@ const RegisterPage = () => {
             <legend className="fieldset-legend">Photo URL</legend>
             <input
               type="text"
-              className="input"
+              className="input w-full pr-10"
               placeholder="Type here photo url"
               {...register("photo", {
                 required: "Photo field is required",
@@ -76,7 +76,7 @@ const RegisterPage = () => {
             <legend className="fieldset-legend">Email address</legend>
             <input
               type="email"
-              className="input"
+              className="input w-full pr-10"
               placeholder="Enter your email address"
               {...register("email", {
                 required: "Email field is required",
@@ -91,14 +91,14 @@ const RegisterPage = () => {
             <legend className="fieldset-legend">Password</legend>
             <input
               type={isShowPassword ? "text" : "password"}
-              className="input"
+              className="input w-full pr-10"
               placeholder="Enter your password"
               {...register("password", {
                 required: "Password field is required",
               })}
             />
             <span
-              className="absolute right-9 top-4.5 cursor-pointer"
+              className="absolute right-3 top-9 cursor-pointer text-gray-500"
               onClick={() => setIsShowPassword(!isShowPassword)}
             >
               {isShowPassword ? <FaEye></FaEye> : <FaEyeSlash />}
