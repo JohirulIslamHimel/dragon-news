@@ -1,3 +1,5 @@
+"use client";
+import { authClient } from "@/lib/auth-client";
 import React from "react";
 import {
   FaFacebook,
@@ -8,16 +10,35 @@ import {
 } from "react-icons/fa";
 
 const RightSidebar = () => {
+  const handleGoogleSignin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    console.log(data);
+  };
+
+  const handleGithubSignin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+    console.log(data);
+  };
   return (
     <div className="space-y-6">
       {/* Login Section  */}
       <div>
         <h2 className="font-bold text-lg mb-4">Login with</h2>
         <div className="flex flex-col gap-2">
-          <button className="btn btn-outline border-blue-500 text-blue-500 w-full">
+          <button
+            className="btn btn-outline border-blue-500 text-blue-500 w-full"
+            onClick={handleGoogleSignin}
+          >
             Login with Google
           </button>
-          <button className="btn btn-outline border-black w-full">
+          <button
+            className="btn btn-outline border-black w-full"
+            onClick={handleGithubSignin}
+          >
             Login with Github
           </button>
         </div>

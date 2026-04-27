@@ -15,12 +15,12 @@ const newsCategoryPage = async ({ params }) => {
   console.log(news);
 
   return (
-    <div className="container mx-auto grid grid-cols-12 gap-4  my-15">
-      <div className="col-span-3">
+    <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 my-10 px-4">
+      <div className="col-span-1 md:col-span-3">
         <LeftSidebar categories={categories} activeId={id}></LeftSidebar>
       </div>
 
-      <div className="  bg-purple-100 col-span-6">
+      <div className="  bg-purple-100 col-span-1 md:col-span-6">
         <h2 className="font-bold text-lg">News by category</h2>
         <div className="space-y-4 mt-6">
           {news.length > 0 ? (
@@ -35,7 +35,7 @@ const newsCategoryPage = async ({ params }) => {
         </div>
       </div>
 
-      <div className="col-span-3">
+      <div className="col-span-1 md:col-span-3">
         <RightSidebar></RightSidebar>
       </div>
     </div>
